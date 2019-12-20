@@ -33,11 +33,16 @@
 
           let li = createNode('li'),
           img = createNode('img'),
-          div = createNode('div');
+          div = createNode('div'),
+          a = createNode('a'),
           h3 = createNode('h3');
+
           img.src = response[i].avatar_url;
+          a.href = response[i].html_url;
+          console.log(a.href);
           h3.innerHTML = `${username}`;
-          append(div, h3)
+          append(a, h3);
+          append(div, a);
           append(li, img);
           append(li, div);
           append(ul, li);
