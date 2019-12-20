@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Gawds</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Quicksand" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+
+<body>
+  <script type="text/javascript">
+    $(document).ready(function () {
+
+      function createNode(element) {
+        return document.createElement(element);
+      }
+
+      function append(parent, el) {
+        return parent.appendChild(el);
+      }
+      const ul = document.getElementById('avatar');
+      let url = "https://api.github.com/orgs/gawdsnitkkr/members"
+
+      $.get(url, function(response) {
+        for (var i = 0; i < response.length; i++) {
+          var username = response[i].login
+          console.log(username)
+
+          let li = createNode('li'),
+          img = createNode('img'),
+          div = createNode('div');
+          h3 = createNode('h3');
+          img.src = response[i].avatar_url;
+          h3.innerHTML = `${username}`;
+          append(div, h3)
+          append(li, img);
+          append(li, div);
+          append(ul, li);
+        }
+      })
+
+    })
+
+  </script>
+
+    <section class="header">
+        <div class="header-content">
+            <h1>Gawds 19</h1>
+            <h3>Code. Design. Develop.</h3>
+        </div>
+    </section>
+
+    <section class="profile">
+        <h3 class="title">Profile</h3>
+        <hr>
+        <ul class="grid" id="avatar">
+        </ul>
+    </section>
+
+
+    <footer>
+        <p>Copyright &copy; 2019 GAWDS</p>
+        <p>
+            <ul>
+                <li><a href="#"><i class="fab fa-twitter-square fa-2x"></i></a></li>
+                <li><a href="#"><i class="fab fa-facebook-square fa-2x"></i></a></li>
+                <li><a href="#"><i class="fab fa-snapchat-square fa-2x"></i></a></li>
+            </ul>
+        </p>
+    </footer>
+</body>
+</html>
