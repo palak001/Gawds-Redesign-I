@@ -74,7 +74,7 @@ section h3 .title{
     position: relative;
     text-align: center;
     justify-content: center;
-    min-height: 100vh;
+     min-height: 100vh;
     color: black;
 }
 
@@ -115,14 +115,32 @@ section h3 .title{
 }
 
 /* profile section */
-
+.title {
+    font-size:48px;
+}
 .profile .grid li{
     height: 350px;
-    padding: 20px;
+    padding: 40px;
     background-clip: content-box;
     background-size: cover;
     background-position: center;
+
 }
+
+img{
+    border-radius: 100px;
+}
+
+li{
+  text-align: center;
+}
+
+li:hover {
+  transition-duration:1s;
+  transform:scale(1.25);
+  opacity:0.5;
+}
+
 
 /* footer section */
 
