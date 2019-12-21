@@ -76,8 +76,6 @@ section h3 .title{
     justify-content: center;
     min-height: 100vh;
     color: black;
-    border-style: solid;
-    border-color: green;
 }
 .header-content div{
   display: inline-block;
