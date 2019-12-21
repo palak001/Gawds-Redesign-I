@@ -1,5 +1,5 @@
 /* General Styles */
-
+@import url('https://fonts.googleapis.com/css?family=Roboto:300');
 *{
     margin: 0;
     padding: 0;
@@ -7,8 +7,9 @@
 }
 
 html{
-    font: normal 16px sans-serif;
+    font: normal 16px 'Roboto';
     color: #555555;
+    background:linear-gradient(141deg, #ccc 25%, #eee 40%, #ddd 55%);
 }
 
 img {
@@ -57,7 +58,7 @@ section{
 
 section h3 .title{
     text-transform: capitalize;
-    font: bold 20px "Open-sans", sans-serif;
+    font: bold 20px;
     margin-bottom: 30px;
     text-align: center;
 }
@@ -78,23 +79,73 @@ section h3 .title{
     color: black;
 }
 
+.header-content div{
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.header-content .code {
+  animation-name:showup;
+  animation-duration: 7s;
+  animation-fill-mode: forwards;
+}
+.header-content .Design {
+  width:0px;
+  animation-name: reveal;
+  animation-duration: 7s;
+  animation-fill-mode: forwards;
+}
+
+.header-content .Design span {
+  margin-left:-200px;
+  animation-name: slidein;
+  animation-duration: 7s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes showup {
+    0% {opacity:0;}
+    20% {opacity:1;}
+    100% {opacity:1;}
+}
+
+@keyframes slidein {
+    0% { margin-left:-80px; }
+    20% { margin-left:-80px; }
+    35% { margin-left:0px; }
+    100% { margin-left:1px; }
+}
+
+@keyframes reveal {
+    0% {opacity:0;width:0px;}
+    20% {opacity:1;width:0px;}
+    30% {width:200px;}
+    80% {opacity:1;}
+    100% {opacity:1;width:200px;}
+}
+
 .header h1{
-    font: bold 60px "Open-sans", sans-serif;
+    font-size: 60px;
+    font-weight:bold;
+    font-family:'Roboto';
     margin-bottom: 15px;
 }
 
 .header h3{
-    font: normal 28px "Open-sans", sans-serif;
+    font-size: 28px;
+    font-weight: normal;
+    font-family:'Roboto';
     margin-bottom: 40px;
 }
 
-.header-content{
+ .header-content{
     opacity: 0;
     margin-top: 100px;
     animation: 1s slidefade 1s forwards;
 }
 
-@keyframes slidefade{
+ @keyframes slidefade{
     100%{
         opacity: 1;
         margin: 0;
