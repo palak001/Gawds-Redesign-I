@@ -44,9 +44,9 @@ hr{
     margin-bottom: 50px;
 }
 
-section:not(.profile):nth-child(even){
+/* section:not(.profile):nth-child(even){
     background-color: #f5f5ff;
-}
+} */
 
 section{
     display: flex;
@@ -76,8 +76,7 @@ section h3 .title{
     justify-content: center;
     min-height: 100vh;
     color: black;
-    border-style: solid;
-    border-color: green;
+    background-color: #f5f5ff;
 }
 .header-content div{
   display: inline-block;
