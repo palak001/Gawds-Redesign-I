@@ -2,7 +2,115 @@
 <html lang="en">
 
 <head>
+    <meta c<!DOCTYPE html>
+<html lang="en">
+
+<head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Gawds</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Quicksand" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+
+<body>
+  <script type="text/javascript">
+    $(document).ready(function () {
+
+      function createNode(element) {
+        return document.createElement(element);
+      }
+
+      function append(parent, el) {
+        return parent.appendChild(el);
+      }
+
+      const ul = document.getElementById('avatar');
+      let url = "https://api.github.com/orgs/gawdsnitkkr/members"
+
+      $.get(url, function(response) {
+        for (var i = 0; i < response.length; i++) {
+
+          function func1(res, callback) {
+            callback(res, function(response) {
+              let li = createNode('li'),
+              img = createNode('img'),
+              div = createNode('div'),
+              a = createNode('a'),
+              h3 = createNode('h3');
+              h4 = createNode('h4');
+              followers_count = response;
+              var username = res.login
+              img.src = res.avatar_url;
+              a.href = res.html_url;
+              h3.innerHTML = `${username}`;
+              h4.innerHTML = `Followers: ${followers_count}`;
+              append(a, h3);
+              append(a, h4);
+              append(div, a);
+              append(li, img);
+              append(li, div);
+              append(ul, li);
+            });
+          }
+
+          function func2(res, callback) {
+            followers_url = res.followers_url;
+            $.get(followers_url, function(response){
+              callback(response.length);
+            })
+          }
+
+          func1(response[i], func2);
+        }
+      })
+
+    })
+
+  </script>
+    <section class="header">
+      <div class="outer1">
+          <div class = "circle1"></div>
+      </div>
+      <div class="outer2">
+          <div class = "circle2"></div>
+      </div>
+      <div class="outer3">
+          <div class = "circle3"></div>
+      </div>
+        <div class="header-content">
+            <h1>Gawds 19</h1>
+            <h3>
+            <div class = "code">Code.</div>
+            <div class = "Design"><span> Design. Develop.<span></div>
+          </h3>
+        </div>
+    </section>
+
+    <section class="profile">
+        <h3 class="title">Profile</h3>
+        <hr>
+        <ul class="grid" id="avatar">
+        </ul>
+    </section>
+
+
+    <footer>
+        <p>Copyright &copy; 2019 GAWDS</p>
+        <p>
+            <ul>
+                <li><a href="#"><i class="fab fa-twitter-square fa-2x"></i></a></li>
+                <li><a href="#"><i class="fab fa-facebook-square fa-2x"></i></a></li>
+                <li><a href="#"><i class="fab fa-snapchat-square fa-2x"></i></a></li>
+            </ul>
+        </p>
+    </footer>
+</body>
+</html>
+harset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Gawds</title>
