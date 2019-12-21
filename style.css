@@ -144,18 +144,37 @@ section h3 .title{
 }
 
 @media (max-width: 800px) {
-  .circle{
-    width:30px;
-    height: 30px;
+  .circle1{
+    width:25px;
+    height: 25px;
     border-radius: 50%;
     background-color: #1abc9c;
-    animation: spin 2s linear infinite;
   }
-  .outer{
+  .circle2{
+    width:20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #1abc9c;
+  }
+  .circle3{
+    width:15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: #1abc9c;
+  }
+  .outer1, .outer2, .outer3 {
     position: absolute;
     width:250px;
     height: 250px;
-    animation: spin 2s linear infinite;
+  }
+  .outer1{
+      animation: spin 2s cubic-bezier(.79, .41, .02, 1.01) 0s infinite;
+  }
+  .outer2{
+      animation: spin 2s cubic-bezier(.79, .41, .02, 1.01) 0.05s infinite;
+  }
+  .outer3{
+      animation: spin 2s cubic-bezier(.79, .41, .02, 1.01) 0.1s infinite;
   }
 }
 
