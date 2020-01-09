@@ -10,63 +10,10 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src = 'script.js'></script>
 </head>
 
 <body>
-  <script type="text/javascript">
-    $(document).ready(function () {
-
-      function createNode(element) {
-        return document.createElement(element);
-      }
-
-      function append(parent, el) {
-        return parent.appendChild(el);
-      }
-
-      const ul = document.getElementById('avatar');
-      let url = "https://api.github.com/orgs/gawdsnitkkr/members"
-
-      $.get(url, function(response) {
-        for (var i = 0; i < response.length; i++) {
-
-          function func1(res, callback) {
-            callback(res, function(response) {
-              let li = createNode('li'),
-              img = createNode('img'),
-              div = createNode('div'),
-              a = createNode('a'),
-              h3 = createNode('h3');
-              h4 = createNode('h4');
-              followers_count = response;
-              var username = res.login
-              img.src = res.avatar_url;
-              a.href = res.html_url;
-              h3.innerHTML = `${username}`;
-              h4.innerHTML = `Followers: ${followers_count}`;
-              append(a, h3);
-              append(a, h4);
-              append(div, a);
-              append(li, img);
-              append(li, div);
-              append(ul, li);
-            });
-          }
-
-          function func2(res, callback) {
-            followers_url = res.followers_url;
-            $.get(followers_url, function(response){
-              callback(response.length);
-            })
-          }
-
-          func1(response[i], func2);
-        }
-      })
-
-    })
-
-  </script>
     <section class="header">
       <div class="outer1">
           <div class = "circle1"></div>
